@@ -9,41 +9,47 @@ pipeline {
             }
         }
 
-        stage("Build Java Files") {
+        stage('Install Dependencies') {
             steps {
-                echo "Building Java files"
-                // Fixed sh block for correct directory handling
-                sh '''
-                    mkdir -p out
-                    javac -d out .java/*.java
-                '''
+                echo 'Installing dependencies using npm'
+                // Run npm install to install any dependencies (if any)
+                sh 'npm install'
             }
         }
 
-        stage("Testing Java Files") {
+        stage('Build') {
             steps {
-                echo "Running Java tests"
-                // Ensure the correct Java class is called
-                sh 'java -cp out script'
+                echo 'Building the application'
+                // Example of a build step if you have any build tools or bundling
+                sh 'npm run build'
             }
         }
 
-        stage("Package Application") {
+        stage('Run Tests') {
             steps {
-                echo "Packaging the project"
-                // Corrected zip command syntax
+                echo 'Running unit tests'
+                // Run any JavaScript tests (if any)
+                // For example, with Jest:
+                sh 'npm test'
+            }
+        }
+
+        stage('Package Application') {
+            steps {
+                echo 'Packaging the application'
+                // Create a zip of the project files
                 sh '''
                     mkdir -p dist
-                    zip -r dist/project.zip ./*.html ./*.css pic
+                    zip -r dist/project.zip ./*.html ./*.css ./*.js pic
                 '''
             }
         }
 
-        stage("Deploying Application") {
+        stage('Deploy') {
             steps {
-                echo "Deploying the application"
-                // Fixed directory path for deploying application
-                sh 'cp *.html *.css pic/* /var/www/html/'
+                echo 'Deploying the application'
+                // You can copy the files to your server or deploy them as needed
+                sh 'cp *.html *.css *.js pic/ * /var/www/html/'
             }
         }
     }
