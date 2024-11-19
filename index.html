@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <div class="container1">
+            <img src="../pics/main logo.png" alt="">
+            <h3>real estate</h3>
+        <div class="nav" id="logdout">
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About us</a>
+            <a href="property.html">Property</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </div>
+        <!-- <div class="otherservise">
+            <a href="addProperty.html"> Add property</a>
+        </div>  -->
+        <div class="contactus">
+            <a href="contactus.html">Contact Us</a>
+        </div> 
+        <div class="nav" id="logdin" style="display: none;">
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About us</a>
+            <a href="property.html">Property</a>
+            <!-- <a href="login.html">Login</a>
+            <a href="register.html">Register</a> -->
+            <a href="addProperty.html"> Add property</a>
+            <a href="contactus.html">Contact Us</a>
+            <a href="" onclick="logout()" id="logoutbtn">logout</a>
+        </div>
+    </div>
+    </div>
+    </header>
+        <div class="middle">
+            <div class="left">
+                <h3>Welcome to Realstate</h3><br>
+                <h1>Manage Your Property</h1>
+                <p>Your will have everything nearby supermarket, buses , station, the carmen neighborhood, etc</p>
+                        <input type="text" placeholder="enter your email" class="middle_text1">
+                        <a href=""><button class="btn">get your quoat</button></a>
+            </div>
+            <div class="right">
+                <img src="home1.png" alt="">
+            </div>
+        </div>
+        <div class="middle1">
+                <h3>Three steps. Three minutes.</h3> <br>
+                <h1>Everything should be this easy.</h1>
+        </div>
+        <div class="middle2">
+                <div class="left_1">
+                    <img src="./pics/messages.png" alt=""><br>
+                    <strong>Answer questions</strong>
+                    <p>Lorem ipsum dolor sit amet consectetur.<br> Adipiscing imperdiet bibendum in in vestibulum. </p>
+                </div>
+                <div class="center_1">
+                    <img src="./pics/sms-tracking.png" alt=""><br>
+                    <strong>Select a quote</strong>
+                    <p>Lorem ipsum dolor sit amet consectetur.<br> Adipiscing imperdiet bibendum in in vestibulum.</p>
+
+                </div>
+                <div class="right_1">
+                    <img src="./pics/edit-2.png" alt=""><br>
+                    <strong>Get registered</strong>
+                    <p>Lorem ipsum dolor sit amet consectetur. Adipiscing imperdiet bibendum in in vestibulum.</p>
+                </div>
+
+        </div>
+        <script>
+             document.addEventListener("DOMContentLoaded", function(){
+                updateheader();
+             });
+
+             function updateheader(){
+                let user=localStorage.getItem("user");
+                console.log("user -",user);
+                if(user){
+                    console.log("login done")
+                    document.getElementById("logdout").style.display="none";
+                    document.getElementById("logdin").style.display="flex";
+                }
+                else{
+                    console.log("logout")
+                    document.getElementById("logdout").style.display="flex";
+                    document.getElementById("logdin").style.display="none";
+                }
+             }
+                function logout(){
+                    localStorage.removeItem("user")
+                    window.location.href="index.html"
+                }
+                document.getElementById('logoutbtn').addEventListener("click",function(event){
+                    logout()
+                })
+
+                
+
+
+             
+        </script>
+    
+
+</body>
+</html>

@@ -1,0 +1,394 @@
+*{
+    box-sizing: border-box;
+}
+header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.container1{
+    display: flex;
+    height: 50px;
+    background-color: #fafafa;
+    border: 1px ;
+    border-radius: 10px;
+    
+
+}
+.container1 img{
+    margin-top: 10px;
+    height: 30px;
+    margin-left: 50px;
+}
+.nav{
+    display: flex;
+    margin: auto;
+    margin-left: 350px;
+    align-items: center;
+    border: 1px   ;
+    border-radius: 10px;  
+    height: 40px;
+    background-color: #fefeff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    
+}
+.nav a{
+    text-decoration: none;
+    color: black;
+    margin-inline: 50px;
+}
+.otherservise{
+    display: flex;
+    margin: auto;
+    margin-right: 4%;  
+}
+.otherservise a{
+    text-decoration: none;
+    color: black;
+    font-size: large;
+}
+.contactus{
+    display: flex;
+    border: 1px  ;
+    border-radius: 10px;
+    height: 40px;
+    margin: auto;
+}
+.contactus a{
+    margin: auto;
+    text-decoration: none;
+    color: black;
+    margin-inline: 50px;
+}
+.middle{
+    display: flex;
+    height: 600px;
+    background: linear-gradient(90deg, rgba(200,223,229,1) 0%, rgba(224,222,212,1) 35%, rgba(246,219,193,1) 100%);
+}
+.left{
+    width: 40%;
+    height: 500px;
+}
+.middle h1{
+    margin-left: 40px;
+    font-size: 75px;
+}
+.middle h3{
+    margin-left: 40px;
+    font-size:30px;   
+}
+.middle p{
+    height: 5px;
+    margin-left:40px ;
+    margin-bottom:100px;
+}
+.middle_text1{
+    margin:0;
+    margin-left: 10px;
+    border: 1px;
+    border-radius: 10px;
+}
+.btn{
+    border: 1px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+.right{
+    width: 60%;
+    height: 500px;
+}
+.right img {
+    margin-left: 250px;
+    margin-bottom: 100px;
+}
+.middle1{
+    height: 150px;
+}
+.middle1 h3{
+    margin: auto;
+    margin-top: 100px;
+    margin-left: 700px;
+    font-size: 40px;
+}
+.middle1 h1{
+        margin: auto;
+        margin-top: 50px;
+        font-size: 80px;
+        margin-left: 400px;
+}
+.middle2{
+    margin-top: 60px;
+    display: flex;
+    height: 200px;
+
+}
+    
+.middle2 .left_1{
+    width:33.33%;
+    
+}
+.middle2 .center_1{
+        
+        width: 33.33%;
+}
+.middle2 .right_1{
+        
+        width: 33.33%;
+}
+.left_1 img{
+    margin-top: 3px;
+    margin-left: 47px;
+    
+}
+.left_1 strong{
+    margin-left: 40px;
+    font-size: xx-large;
+}
+.left_1 p{
+    margin-left: 40px;
+    font-size: x-large;
+}
+ 
+
+.center_1 img{
+    margin-top: 3px;
+    margin-left: 47px;
+    
+}
+.center_1 strong{
+    margin-left: 40px;
+    font-size: xx-large;
+}
+.center_1 p{
+    margin-left: 40px;
+    font-size: x-large;
+}
+
+
+.right_1 img{
+    margin-top: 1px;
+    margin-left: 47px;
+    
+}
+.right_1 strong{
+    margin-left: 40px;
+    font-size: xx-large;
+}
+.right_1 p{
+    margin-left: 40px;
+    font-size: x-large;
+}
+
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 720px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+      width: 100%;
+    }
+    header{
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    .container1{
+        /* flex-direction: column; */
+        height: 120px;
+        background-color: #fafafa;
+        
+        border-radius: 10px;
+        position: relative;
+    
+    }
+    .container1 h3 {
+        position: absolute;
+        left: 180px;
+        margin-top: 40px;
+        font-size: 15px;
+    }
+    .container1 img{
+        width: 70px;
+        margin-top: 24px;
+        height: 40px;
+        margin-left: 110px;
+
+    }
+    .nav{
+        position: absolute;
+        /* flex-direction: column; */
+        /* display: flex; */
+        margin: auto;
+        margin-top: 80px;
+        /* align-items: center; */
+        border-radius: 10px;  
+        height: 20px;
+        background-color: #fefeff;
+        /* position: sticky;
+        top: 0;
+        z-index: 100; */
+        
+    }
+
+    .nav a{
+        margin-right: 20px;
+        margin: 8px;
+        text-decoration: none;
+        color: black;
+        /* margin-inline: 50px; */
+    }
+    
+    .otherservise{
+        display: none;
+    }
+    .contactus{
+        display:none;
+    }
+    .middle{
+        display: flex;
+        height: 600px;
+        background: linear-gradient(90deg, rgba(200,223,229,1) 0%, rgba(224,222,212,1) 35%, rgba(246,219,193,1) 100%);
+        
+    }
+    .left{
+        width: 40%;
+        height: 500px;
+        
+    }
+    .middle h1{
+        margin-left: 10px;
+        font-size: 75px;
+        height: 100px;
+        margin: 0%;
+    }
+    .middle h3{
+        margin-left: 1px;
+        font-size:30px;
+        width: 350px; 
+        
+    }
+    .middle p{
+        height: 5px;
+        margin-left:1px ;
+        margin-top: 180px;
+        width: 400px;
+    }
+    .middle_text1{
+        margin-left: 90px;
+        border: 1px;
+        border-radius: 10px;
+    }
+    .btn{
+        border: 1px;
+        border-radius: 10px;
+        
+        color: white;
+        margin-left: 135px;
+        width: 110px;
+        margin-bottom: 110px;
+
+    }
+    .right{
+        display: none;
+    }
+
+    .middle1{
+        height: 300px;
+        
+    }
+    .middle1 h3{
+        width: 300px;
+        margin: 0%;
+        font-size: 20px;
+        text-align: center;
+        margin-left: 40px;
+        margin-top: 20px;
+
+    }
+    .middle1 h1{
+            margin: 0%;
+            margin-top: 50px;
+            font-size: 50px;
+            margin-left: px;
+    }
+    .middle2{
+        margin-top: 60px;
+        display: flex;
+        height: 400px;
+        
+    
+    }
+        
+    .middle2 .left_1{
+        width:33.33%;
+        
+    }
+    .middle2 .center_1{
+            
+            width: 33.33%;
+    }
+    .middle2 .right_1{
+            
+            width: 33.33%;
+    }
+    .left_1 img{
+        margin-top: 1px;
+        margin-left: 5px;
+        
+    }
+    .left_1 strong{
+        margin-left: 10px;
+        font-size:x-large;
+    }
+    .left_1 p{
+        margin-left: 10px;
+        font-size: large;
+    }
+     
+    
+    .center_1 img{
+        margin-top: 1px;
+        margin-left: 5px;
+        
+    }
+    .center_1 strong{
+        margin-left: 10px;
+        font-size: x-large;
+    }
+    .center_1 p{
+        margin-left: 10px;
+        font-size: large;
+    }
+    
+    
+    .right_1 img{
+        margin-top: 1px;
+        margin-left: 5px;
+        
+    }
+    .right_1 strong{
+        margin-left: 10px;
+        font-size: x-large;
+    }
+    .right_1 p{
+        margin-left: 10px;
+        font-size: large;
+    }
+
+
+
+  }
