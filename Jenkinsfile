@@ -1,45 +1,53 @@
 pipeline {
     agent any
-    stages{
-        stage("checkout code"){
-            steps{
-                echo "checkout the code"
-                checkout scm "https://github.com/sarthakpl/test.git"
-            }  
-        }
-    stage("build java files"){
-        steps{
-            echo "Building java files"
-            sh ''' mkdir -p out
-                javac -d out .java/ *.java
-             '''
+    stages {
+        stage("Checkout Code") {
+            steps {
+                echo "Checking out the code"
+                // Correcting checkout syntax
+                checkout scm
             }
-       
         }
-    stage("testing java files"){
-        steps{
-            echo "running java"
-            sh 'java -cp out script'
+
+        stage("Build Java Files") {
+            steps {
+                echo "Building Java files"
+                // Fixed sh block for correct directory handling
+                sh '''
+                    mkdir -p out
+                    javac -d out .java/*.java
+                '''
             }
-        
         }
-    stage("package application"){
-        steps{
-            echo "packinging the project"
-            sh '''
-                mkdir -p dist
-                zip -r dist/project.zip ./ *.html ./ *.css pics 
-            '''
+
+        stage("Testing Java Files") {
+            steps {
+                echo "Running Java tests"
+                // Ensure the correct Java class is called
+                sh 'java -cp out script'
             }
-        
         }
-    stage("deploying application"){
-        steps{
-            echo "Deploying the application"
-            sh 'cp *.html *.css pic/ * /var/www/html/'
+
+        stage("Package Application") {
+            steps {
+                echo "Packaging the project"
+                // Corrected zip command syntax
+                sh '''
+                    mkdir -p dist
+                    zip -r dist/project.zip ./*.html ./*.css pic
+                '''
             }
-        
         }
+
+        stage("Deploying Application") {
+            steps {
+                echo "Deploying the application"
+                // Fixed directory path for deploying application
+                sh 'cp *.html *.css pic/* /var/www/html/'
+            }
+        }
+    }
+
     post {
         success {
             echo 'Pipeline completed successfully!'
@@ -48,5 +56,5 @@ pipeline {
             echo 'Pipeline failed. Check the logs for errors.'
         }
     }
-}    
 }
+
