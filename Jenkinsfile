@@ -4,7 +4,7 @@ pipeline {
         stage("checkout code"){
             steps{
                 echo "checkout the code"
-                checkout scm https://github.com/sarthakpl/test.git
+                checkout scm "https://github.com/sarthakpl/test.git"
             }  
         }
     stage("build java files"){
